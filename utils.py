@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 from PIL import Image
 
@@ -9,6 +8,7 @@ def load_image(path):
 
 
 def plot_sample(lr, sr):
+    # TODO: remove since plt removed
     plt.figure(figsize=(20, 10))
 
     images = [lr, sr]
