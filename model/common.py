@@ -1,3 +1,5 @@
+from PIL import Image
+
 import numpy as np
 import tensorflow as tf
 
@@ -15,7 +17,7 @@ def resolve(model, lr_batch):
     sr_batch = tf.clip_by_value(sr_batch, 0, 255)
     sr_batch = tf.round(sr_batch)
     sr_batch = tf.cast(sr_batch, tf.uint8)
-    return sr_batch
+    return [Image.fromarray(sr_image) for sr_image in sr_batch]
 
 
 def evaluate(model, dataset):
